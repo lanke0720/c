@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+void reverse(char *str)
+{
+	int len = strlen(str);
+	char tmp = *str;
+	*str = *(str+len-1);
+	*(str+len-1) = '\0';
+	
+	if(strlen(str+1)>1)
+		reverse(str+1);
+	*(str+len-1) = tmp;
+}
+int main()
+{
+	char arr[] = "abcdef";
+	reverse(arr);
+	printf("%s\n", arr);
+	return 0;
+}
