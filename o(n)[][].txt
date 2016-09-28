@@ -1,0 +1,49 @@
+
+#define ROWS 3
+#define COLS 4
+
+struct Ret
+{
+	int x;
+	int y;
+};
+
+struct Ret find_num(int arr[ROWS][COLS], int k, int rows, int cols)
+{
+	struct Ret ret = {-1,-1};
+	int x = 0;
+	int y = cols-1;
+	while((x<ROWS)&&(y>=0))
+	{
+		if(arr[x][y] == k)
+		{
+			ret.x = x;
+			ret.y = y;
+			return ret;
+		}
+			//return &arr[x][y];
+		else if(arr[x][y]< k)
+		{
+			x++;
+		}
+		else
+		{
+			y--;
+		}
+	}
+	return ret;
+}
+int main()
+{
+	int arr[ROWS][COLS] = {1,2,3,4,5,6,7,8,9,10,11,12};
+	struct Ret ret = find_num(arr, 4, ROWS, COLS);
+	/*if(pret != NULL)
+	{
+		printf("%d\n", *pret);
+	}
+	else
+	{
+		printf("not exist\n");
+	}*/
+	return 0;
+}
