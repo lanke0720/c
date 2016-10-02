@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<assert.h>
+char* my_strcat(char* dest, const char* src)
+{
+	char *ret = dest;
+	assert(dest != NULL);
+	assert(src != NULL);
+	//ÕÒÄ¿±êµÄ¡®\0¡¯
+	while(*dest != '\0')
+	{
+		dest++;
+	}
+	//¿½±´
+	while(*dest++=*src++)
+	{
+		;
+	}
+	/*while(*src != '\0')
+	{
+		*dest++ = *src++;
+	}*/
+	return ret;
+}
+int main()
+{
+	char arr[20] = "hello ";
+	//strcat(arr, "bit.");
+	my_strcat(arr, "bit.");
+	printf("%s\n", arr);
+	return 0;
+}
