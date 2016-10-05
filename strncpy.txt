@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <assert.h>
+char *my_strncpy(char *dest,const char *src, int count)
+{
+	char *ret = dest;
+	assert(dest);
+	assert(src);
+	//src---->>"abc"; count=6
+	while(count && (*dest++ = *src++))
+	{
+		count--;
+	}
+	if(count > 0)
+	{
+		while(--count)	
+		{
+			*dest++ = '\0';
+		}
+	}
+	return ret;
+}
+int main()
+{
+	char arr[20]= {'a','b','c','d','e','f','h','i'};
+	//strcpy(arr, "bit");
+	my_strncpy(arr, "bit", 6);
+	printf("%s\n", arr);
+	return 0;
+}
