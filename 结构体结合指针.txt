@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+//
+//struct Test
+//{
+//	int Num;
+//	char *pcName;
+//	short sDate;
+//	char cha[2];
+//	short sBa[4];
+//}*p;
+//
+//int main()
+//{
+//	struct Test t;//20
+//	struct Test*p = &t;
+//	printf("%p\n", p);
+//	// p = 0x00 00 00 00
+//	printf("%p\n", p + 0x1);
+//	//0x00000014
+//	printf("%p\n",(unsigned long)p + 0x1);
+//	//0x00000001
+//	printf("%p\n",(char*)p + 0x1);
+//	//0x00000004
+//	return 0;
+//}
